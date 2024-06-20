@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Name des Autors" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="beach.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    <title>Beach</title>
+</head>
+
+<body>
+
+<!-- SECTION 1 -->
+<section>
+    <div class="one">
+        <div class ="beach-image">
+            <img src="Images/beach.png" id="beach">
+        </div>
+
+        <div class="beach-typo">
+            <h1><p id="dot">.</p>     Beach</h1>
+        </div>
+        
+        <div class="atmo-typo">
+            <p>Click here for atmosphere</p>
+        </div>
+
+        <section>
+            <audio id="audioPlayer" loop>
+                <source src="Music/backgroundMusic.mp4" type="audio/mpeg">
+                Dieser Browser unterstützt dieses Feature nicht.
+            </audio>
+        </section>
+        
+        <button id="playButton">Audio starten</button>
+    </div>
+</section>
+
+<!-- SECTION 2 -->
+<section>
+    <div class="two">
+        <div class="take-typo">
+            <h3 id="menu-text">What do you take?</h3>
+        </div>
+
+        
+        <div class="umbrella-image">
+            <img src=Images/umbrella.png id="umbrella">
+        </div>
+
+        <div class="menu-sunglasses">
+            <a href="#sunglass-text">
+                <img src=Images/menuSunglasses.png id="menuSunglasses">
+            </a>
+        </div>
+
+        <div class="menu-ice">
+            <a href="#icecream-text">
+                <img src=Images/menuIce.png id="menuIce">
+            </a>
+        </div>
+
+        <div class="menu-headphones">
+            <a href="#headphones-text">
+                <img src=Images/menuHeadphones.png id="menuHeadphones">
+            </a>
+        </div>
+
+        <div class="menu-bucket">
+            <a href="#sandcastle-text">
+                <img src=Images/menuBucket.png id="menuBucket">
+            </a>
+        </div>
+
+        <div class="menu-unicorn">
+            <a href="#swim-text">
+                <img src=Images/menuUnicorn.png id="menuUnicorn">
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 3 -->
+<section>
+    <div class="three">
+        <div class="sunscreen-typo">
+            <h3>Don't forget your sunscreen!</h3>
+        </div>
+
+        <div class="sunscreen-image">
+            <img src="Images/sunscreen.png" id="sunscreen">
+        </div>
+
+        <button class="red-button" id="timerButton">
+            <span id="timer">00:00:00</span>
+        </button>
+    </div>
+
+    <div id="customAlert" class="custom-alert">
+        <div class="custom-alert-content">      
+            <span class="close-btn" id="closeAlert">&times;</span>
+            <p>Zeit für Sonnencreme!</p>
+        </div>
+    </div>  
+</section>
+
+<!-- SECTION 4 -->
+<section>
+    <div class="four">
+        <div class="sunglass-typo">
+            <h3 id="sunglass-text">Time to put your sunglasses on</h3>
+        </div>
+    
+        <div class="sunglass-image">
+            <img src="Images/sunglasses.png" id="sunglass" onclick="toggleDarkMode()">
+        </div>
+
+        <a href="#menu-text">
+            <img src=Images/menuIcon.png id="menuIcon4">
+        </a>
+    </div>
+</section> 
+
+<!-- SECTION 5 -->
+<section>
+    <div class="five">
+        <div class="ice-typo">
+            <h3 id="icecream-text">Take some Ice cream</h3>
+        </div>
+
+        <img src="Images/arrowright.png" id="arrowright">
+        <img src="Images/arrowleft.png" id="arrowleft">
+
+        <div class="container">
+            <input type="radio" name="slider" id="item-1" checked>
+            <input type="radio" name="slider" id="item-2">
+            <input type="radio" name="slider" id="item-3">
+            <input type="radio" name="slider" id="item-4">
+            <input type="radio" name="slider" id="item-5">
+            
+            <div class="cards">
+                    <label class="card" for="item-1" id="ice-1">
+                        <img src="Images/ice1.png" alt="ice">
+                    </label>
+                    <label class="card" for="item-2" id="ice-2">
+                        <img src="Images/ice2.png" alt="ice">
+                    </label>
+                    <label class="card" for="item-3" id="ice-3">
+                        <img src="Images/ice3.png" alt="ice">
+                    </label>
+                    <label class="card" for="item-4" id="ice-4">
+                        <img src="Images/ice4.png" alt="ice">
+                    </label>
+                    <label class="card" for="item-5" id="ice-5">
+                        <img src="Images/ice5.png" alt="ice">
+                    </label>
+                </div>
+
+            </div>
+
+        <a href="#menu-text">
+            <img src=Images/menuIcon.png id="menuIcon5">
+        </a>
+    </div>
+</section>
+
+<!-- SECTION 6 -->
+<section>
+    <div class="six">
+        <div class="headphones-typo">
+            <h3 id="headphones-text">Time to listen to some music</h3>
+        </div>
+        
+        <div class="headphones-image">
+            <img src="Images/headphones.png" id="headphones">
+        </div>
+
+        <div class="player-container">
+            <div class="cover">
+                <img src="Images/summerVibes.png" alt="Album Cover">
+            </div>
+        
+            <div class="info">
+                <h1 class="title"></h1>
+            </div>
+        
+            <div class="controls">
+                <button class="prev"><i class="fa fa-backward"></i></button>
+                <button class="play-pause" id="play-pause"><i class="fa fa-play"></i></button>
+                <button class="next"><i class="fa fa-forward"></i></button>
+            </div>
+    
+            <audio id="audio">
+                <source src="musik/chill-afro-vibes-213940.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <a href="#menu-text">
+            <img src=Images/menuIcon.png id="menuIcon6">
+        </a>
+    </div>
+</section>
+
+<!-- SECTION 7 -->
+<section>
+    <div class="seven">
+        <div class="sandcastle-typo">
+            <h3 id="sandcastle-text">Build your Sandcastle</h3>
+        </div>
+
+
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="Images/sandcastle.png" alt="Sandcastle 1">
+                    </div>
+                    
+                    <div class="slide">
+                        <img src="Images/sandcastle2.png" alt="Sandcastle 2">
+                    </div>
+                    
+                    <div class="slide">
+                        <img src="Images/sandcastle3.png" alt="Sandcastle 3">
+                    </div>
+                </div>
+                
+                <div class="navigation">
+                    <button class="prev2">❮</button>
+                    <button class="next2">❯</button>
+                </div>
+            </div>
+
+
+        <a href="#menu-text">
+            <img src=Images/menuIcon.png id="menuIcon7">
+        </a>
+    </div>
+</section>
+
+<!-- SECTION 8 -->
+<section>
+    <div class="eight">
+        <div class="swim-typo">
+            <h3 id="swim-text">Time to go swimming</h3>
+        </div>
+
+        <div class="feet1">
+            <img src="Images/feet1.png">
+        </div>
+
+        <div class="feet2">
+            <img src="Images/feet2.png">
+        </div>
+
+        <div class="feet3">
+            <img src="Images/feet3.png">
+        </div>
+
+        <div class="feet4">
+            <img src="Images/feet4.png">
+        </div>
+    
+        <div class="swim-image">
+            <img src="Images/unicorn.png" id="swim">
+        </div>
+        
+        <div class="ask-typo">
+            <h3>What does your day at the beach look like?</h3>
+        </div>
+        
+        <div class="callToAction">
+            <button class="openPopup">Book your beachday</button>
+        </div>
+
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <Span class="close">&times;</Span>
+                    <div class="popup-text"> 
+                        <p>Thank you for being interested!<br>
+                        Unfortunately, this website is a university project.<br> 
+                        However, you are welcome to take a look at my repository.<br>
+                        <br>
+                        Thanks a lot, Farina &#058;&#041;
+                        <br>
+                        <br></p>
+                    </div>
+                <a href="https://github.com/FarinaKn/Beach_ResponsiveWebdesign_SoSe24" target="_blank" class="link-button">To my Repository</a>
+            </div>
+        </div>
+
+        <a href="#menu-text">
+            <img src=Images/menuIcon.png id="menuIcon8">
+        </a>
+    </div>
+</section>
+
+</body>
+
+
+
+<footer>
+
+
+</footer>
