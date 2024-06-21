@@ -5,31 +5,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
   playButton.style.display = 'none';
 
-function startAudio() {
-  audioPlayer.play().then(function() {
-    console.log('Wiedergabe automatisch gestartet');
-    document.removeEventListener('click', startAudio); 
-  }).catch(function(error) {
-    console.log('Wiedergabe konnte nicht automatisch gestartet werden: ', error);
+  function startAudio() {
+    audioPlayer.play().then(function() {
+      console.log('Wiedergabe automatisch gestartet');
+      document.removeEventListener('click', startAudio);
+      document.removeEventListener('touchstart', startAudio);
+    }).catch(function(error) {
+      console.log('Wiedergabe konnte nicht automatisch gestartet werden: ', error);
+      playButton.style.display = 'block';
+    });
+  }
+
+  audioPlayer.addEventListener('play', function() {
+    playButton.style.display = 'none';
+  });
+
+  audioPlayer.addEventListener('pause', function() {
     playButton.style.display = 'block';
   });
-}
 
-audioPlayer.addEventListener('play', function() {
-  playButton.style.display = 'none';
-});
-audioPlayer.addEventListener('pause', function() {
-  playButton.style.display = 'block';
-});
+  console.log('Audio-Element geladen:', audioPlayer);
 
-console.log('Audio-Element geladen:', audioPlayer);
+  // Media Query für mobile Geräte
+  const mediaQuery = window.matchMedia('(max-width: 720px)');
 
-document.addEventListener('click', startAudio);
+  if (mediaQuery.matches) {
+    // Touch-Event für mobile Geräte
+    document.addEventListener('touchstart', startAudio);
+  } else {
+    // Click-Event für Desktop-Geräte
+    document.addEventListener('click', startAudio);
+  }
 
-playButton.addEventListener('click', function() {
-  audioPlayer.play().catch(function(error) {
-    console.log('Wiedergabe konnte nicht gestartet werden: ', error);
-    playButton.style.display = 'block';
+  playButton.addEventListener('click', function() {
+    audioPlayer.play().catch(function(error) {
+      console.log('Wiedergabe konnte nicht gestartet werden: ', error);
+      playButton.style.display = 'block';
     });
   });
 });
