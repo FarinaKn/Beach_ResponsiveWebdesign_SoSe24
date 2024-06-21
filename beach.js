@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('Audio-Element geladen:', audioPlayer);
 
   // Media Query für mobile Geräte
-  const mediaQuery = window.matchMedia('(max-width: 720px)');
+  const mediaQuery = window.matchMedia('(max-width: 415px)');
 
   if (mediaQuery.matches) {
     // Touch-Event für mobile Geräte
