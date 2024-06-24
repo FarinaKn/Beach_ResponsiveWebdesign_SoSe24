@@ -321,6 +321,16 @@ h2, h3, h4, h5, h6 {
   background-color: rgb(170, 147, 110);; 
 }
 
+#arrowsunglass {
+  position: absolute;
+  transform: rotate(90deg);
+  bottom: 72%;
+  left: 84%;
+  width: 5%;
+  height: auto;
+  animation: fadeInOut 6s ease-in-out infinite;
+}
+
 .sunglass-typo {
   position: absolute;
   top: 8%;
