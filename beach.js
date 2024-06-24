@@ -30,10 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const mediaQuery = window.matchMedia('(max-width: 720px)');
 
   if (mediaQuery.matches) {
-    // Touch-Event für mobile Geräte
     document.addEventListener('touchstart', startAudio);
   } else {
-    // Click-Event für Desktop-Geräte
     document.addEventListener('click', startAudio);
   }
 
@@ -157,10 +155,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const diff = startX - currentX;
       if (Math.abs(diff) > 50) {
         if (diff > 0) {
-          // Swiped left
           toggleClass('next');
         } else {
-          // Swiped right
           toggleClass('prev');
         }
       }
@@ -184,14 +180,12 @@ document.addEventListener('DOMContentLoaded', function() {
     body.classList.toggle('blue');
   }
 
-  // Listen for changes by clicking on radio buttons
   inputs.forEach(input => {
     input.addEventListener('change', function() {
       body.classList.toggle('blue');
     });
   });
 
-  // Listen for touch events for swipe gestures
   document.addEventListener('touchstart', handleTouchStart, false);
   document.addEventListener('touchmove', handleTouchMove, false);
   document.addEventListener('touchend', handleTouchEnd, false);
@@ -202,7 +196,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const arrowRight = document.getElementById('arrowright');
 
   function handleResize() {
-    // Überprüfen Sie die Bildschirmbreite und zeigen Sie die Pfeile nur auf Desktop an
     if (window.innerWidth >= 720) {
       arrowLeft.style.display = 'block';
       arrowRight.style.display = 'block';
@@ -212,7 +205,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Initial ausführen und bei Änderungen der Bildschirmgröße aktualisieren
   handleResize();
   window.addEventListener('resize', handleResize);
 });
@@ -306,20 +298,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function nextSlide() {
-    currentIndex = (currentIndex + 1) % 3; // 3 is the number of slides
+    currentIndex = (currentIndex + 1) % 3;
     showSlide(currentIndex);
   }
 
   function prevSlide() {
-    currentIndex = (currentIndex - 1 + 3) % 3; // 3 is the number of slides
+    currentIndex = (currentIndex - 1 + 3) % 3;
     showSlide(currentIndex);
   }
 
   const nextButton = document.querySelector('.next2');
   const prevButton = document.querySelector('.prev2');
-
-  // Media Query für mobile Geräte
   const mediaQuery = window.matchMedia('(max-width: 720px)');
+  
   if (mediaQuery.matches) {
     nextButton.style.display = 'none';
     prevButton.style.display = 'none';
@@ -341,14 +332,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function handleSwipe() {
-    if (touchStartX - touchEndX > 50) { // Swipe nach links
+    if (touchStartX - touchEndX > 50) {
       nextSlide();
-    } else if (touchEndX - touchStartX > 50) { // Swipe nach rechts
+    } else if (touchEndX - touchStartX > 50) {
       prevSlide();
     }
   }
 
-  showSlide(currentIndex); // Initial Slide anzeigen
+  showSlide(currentIndex);
 });
 /*End section seven*/
 
