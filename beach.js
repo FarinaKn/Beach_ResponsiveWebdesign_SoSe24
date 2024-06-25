@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var timerButton = document.getElementById("timerButton");
   var startTime;
   var timerInterval;
-  var countdownDuration = 10 * 60 * 1000;
+  var countdownDuration = 5 * 60 * 1000;
   var customAlert = document.getElementById("customAlert");
   var closeAlert = document.getElementById("closeAlert");
 
